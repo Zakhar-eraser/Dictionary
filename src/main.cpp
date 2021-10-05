@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <vector>
 #ifdef WINDOWS
     #define CLEAR "cls"
 #else
@@ -130,6 +131,7 @@ class BinaryTree
 class Dictionary
 {
     private:
+        std::vector<BinaryTree*> history;
         std::string pathToInputFile;
         std::string name;
         bool wasChanged = false;
@@ -309,12 +311,13 @@ class CommandHandler
                     std::cout << std::endl << "Save dictionary before closing? [y/n]: ";
                     std::cin >> response;
                     std::string yesWord = "y";
-                    if(CompareWords(response, yesWord))
+                    std::string noWord = "n";
+                    if(CompareWords(response, yesWord) == 0)
                     {
                         dictionary->AddPairsToFile();
                         break;
                     }
-                    else if(response[0] == 'n') break;
+                    else if(CompareWords(response, noWord) == 0) break;
                 } while (true);
             }
         }

@@ -10,6 +10,7 @@ To add pair word - translation just enter word and its translation through space
 ## List of commadns:
 * __show__ Show all words of dictionary from A to Z
 * __sshow__ Show all words that starts with entered* substring
+* __history__ Show last 10 added pairs
 * __save__ Save all dictionary into file with name such "_name_of_dictionary.dict_"
 * __remove__ Remove given* word from the dictionary
 * __new__ Create new dictionary with given* name or open exiting
